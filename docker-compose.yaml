@@ -1,0 +1,15 @@
+services:
+  backend:
+    image: ttl.sh/lalyos/web:v5
+    ports:
+      - 80
+    environment:
+      - TITLE=Backend v2
+      - COLOR=yellow
+  frontend:
+    image: ttl.sh/lalyos/web:v5
+    ports:
+      - 80
+    environment:
+      - TITLE=Frontend
+      - COLOR=mediumpurple
