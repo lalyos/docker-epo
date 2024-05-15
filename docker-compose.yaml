@@ -1,6 +1,7 @@
 services:
   backend:
     image: ttl.sh/lalyos/web:v6
+    build: .
     ports:
       - 80
     environment:
@@ -8,6 +9,7 @@ services:
       - COLOR=${BACKEND_COLOR:-yellow}
   frontend:
     image: ttl.sh/lalyos/web:v6
+    build: .
     ports:
       - 80
     environment:
@@ -15,6 +17,7 @@ services:
       - COLOR=${FRONTEND_COLOR:-mediumpurple}
   momentum:
     image: ttl.sh/lalyos/web:v6
+    build: .
     ports:
       - 80
     environment:
@@ -22,6 +25,7 @@ services:
       - COLOR=${MOM_COLOR:-mediumpurple}
   fidesz:
     image: ttl.sh/lalyos/web:v6
+    build: .
     ports:
       - 80
     environment:
