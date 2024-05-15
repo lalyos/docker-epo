@@ -1,15 +1,29 @@
 services:
   backend:
-    image: ttl.sh/lalyos/web:v5
+    image: ttl.sh/lalyos/web:v6
     ports:
       - 80
     environment:
-      - TITLE=Backend v2
-      - COLOR=yellow
+      - TITLE=${BACKEND_TITLE:-Backend [dev]}
+      - COLOR=${BACKEND_COLOR:-yellow}
   frontend:
-    image: ttl.sh/lalyos/web:v5
+    image: ttl.sh/lalyos/web:v6
     ports:
       - 80
     environment:
-      - TITLE=Frontend
-      - COLOR=mediumpurple
+      - TITLE=${FRONTEND_TITLE:-Frontend [dev]}
+      - COLOR=${FRONTEND_COLOR:-mediumpurple}
+  momentum:
+    image: ttl.sh/lalyos/web:v6
+    ports:
+      - 80
+    environment:
+      - TITLE=${MOM_TITLE:-Szavazz a Momentumra}
+      - COLOR=${MOM_COLOR:-mediumpurple}
+  fidesz:
+    image: ttl.sh/lalyos/web:v6
+    ports:
+      - 80
+    environment:
+      - TITLE=${FID_TITLE:-Szavazz a fideszre}
+      - COLOR=${FID_COLOR:-orange}
